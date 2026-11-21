@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=App Library
+Comment=Find and install apps from Flathub
+Exec=nizho-capsule
+Icon=nizho-capsule
+Keywords=app library;capsule;install;apps;software;flatpak;flathub;store;package;update;
+Categories=System;PackageManager;

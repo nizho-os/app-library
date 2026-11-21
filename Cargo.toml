@@ -1,0 +1,30 @@
+[package]
+name = "nizho-app-library"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.79"
+license = "GPL-3.0-or-later"
+description = "App Library: find and install Flathub apps for your account, after seeing what each one can reach"
+repository = "https://github.com/nizho-os/app-library"
+
+# The binary and app id keep Capsule's names, so docks and menus that pinned Capsule keep working.
+[[bin]]
+name = "nizho-capsule"
+path = "src/main.rs"
+
+[features]
+default = ["archon"]
+# The "System apps" page: Nizho's Archon package service (org.nizho.Archon1 on the system bus).
+archon = []
+
+[dependencies]
+gtk4 = "0.9"
+libadwaita = { version = "0.7", features = ["v1_5"] }
+glib = "0.20"
+quick-xml = "0.41"
+serde_json = "1"
+
+[profile.release]
+opt-level = "z"
+lto = true
+strip = true
